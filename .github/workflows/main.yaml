@@ -1,0 +1,14 @@
+name: My Github ACtions Workflow
+on: [push] #Whenever push operation kicks in github workflow kicks in
+
+# executes group of steps that execute on the Runner 
+jobs: #that runs as part of our workflows, each job must have unique name
+  testing_github:
+    runs-on: ubuntu-latest #Runner the exceute environment for the jobs
+    steps: # Steps for the job
+      - name: Hello #Description
+        run: echo "Hello, Github Actions" #Run command
+      - name: Display repo name
+        run: echo "This workflow is running in ${{github.repository}}"
+
+
